@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAM – Student Academic Monitor</title>
+    <link rel="stylesheet" href="{% static 'chatbot/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><span class="logo">SAM</span> – Student Academic Monitor</h1>
+        </header>
+        <main>
+            <section id="chat-section">
+                <div id="chat-box" class="box"></div>
+                <div class="input-row">
+                    <input id="query" type="text" placeholder="Ask me anything about VNIW…">
+                    <button id="mic" title="Speak" class="icon-btn">🎙️</button>
+                    <button id="send" title="Send" class="icon-btn">➤</button>
+                </div>
+            </section>
+            <section id="performance-section">
+                <h2>Academic Performance Analyzer</h2>
+                <div class="tabs">
+                    <button class="tab active" data-target="#csv-pane">CSV Upload</button>
+                    <button class="tab" data-target="#manual-pane">Manual Entry</button>
+                </div>
+                <div id="csv-pane" class="pane active">
+                    <form id="perf-form">
+                        <input type="file" id="csv-file" accept=".csv">
+                        <button type="submit" class="primary">Analyze</button>
+                    </form>
+                </div>
+                <div id="manual-pane" class="pane">
+                    <div class="manual-row">
+                        <input type="text" id="subj" placeholder="Subject"/>
+                        <input type="number" id="mark" placeholder="Marks"/>
+                        <button id="add-mark" class="secondary">Add</button>
+                    </div>
+                    <table id="marks-table"><thead><tr><th>Subject</th><th>Marks</th><th></th></tr></thead><tbody></tbody></table>
+                    <button id="manual-analyze" class="primary">Analyze</button>
+                </div>
+                <div id="perf-result" class="box"></div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+    <script src="{% static 'chatbot/script.js' %}"></script>
+</body>
+</html>
