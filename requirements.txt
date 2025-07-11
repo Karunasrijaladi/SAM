@@ -1,6 +1,11 @@
-django>=5.0.0
+Django>=5.0.0
 python-dotenv>=1.0.0
 google-generativeai>=0.2.0
 pandas>=2.0.0
 scikit-learn>=1.4.0
 gTTS>=2.4.0
+SpeechRecognition
+pyaudio
+openai
+requests
+whitenoise
